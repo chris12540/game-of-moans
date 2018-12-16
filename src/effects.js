@@ -4,18 +4,26 @@ import axios from 'axios';
 
 export function useDataFetcher(url) {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    axios.get(url).then(response => {
-      setData(response.data);
-    })
-      .catch(setError)
-      .then(() => setIsLoading(false))
-  }, []);
+    if (hasStarted) {
+      setIsLoading(true);
+      axios.get(url).then(response => {
+        setData(response.data);
+      })
+        .catch(setError)
+        .then(() => setIsLoading(false))
+    }
+  }, [hasStarted]);
   
-  return [data, isLoading, error];
+  function doFetch() {
+    setHasStarted(true);
+  }
+
+  return [data, isLoading, error, doFetch];
 }
 
 // Compare the above to the same thing using a higher order component (HOC).
