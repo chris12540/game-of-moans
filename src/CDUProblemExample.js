@@ -40,8 +40,13 @@ class Profile extends Component {
   }
 
   fetchProfile() {
+    const currentProfileId = this.props.profileId;
     getProfile(this.props.profileId).then(data => {
-      this.setState({ profile: data });
+      if (this.props.profileId === currentProfileId) {
+        this.setState({ profile: data });
+      } else {
+        console.log(`Skipping updating state because data for profile with id ${currentProfileId} doesn't match current profile id ${this.props.profileId}`);
+      }
     })
   }
 
