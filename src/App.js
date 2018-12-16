@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Demo from './Demo';
-import CDUProblemExample from './CDUProblemExample';
+import DataFetchDemo from './DataFetchDemo';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <CDUProblemExample />
+        <DataFetchDemo />
       </div>
     );
   }
