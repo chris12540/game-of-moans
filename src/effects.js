@@ -6,10 +6,10 @@ export function useDataFetcher(url) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [fetchCount, setFetchCount] = useState(0);
 
   useEffect(() => {
-    if (hasStarted) {
+    if (fetchCount) {
       setIsLoading(true);
       axios.get(url).then(response => {
         setData(response.data);
@@ -17,17 +17,17 @@ export function useDataFetcher(url) {
         .catch(setError)
         .then(() => setIsLoading(false))
     }
-  }, [hasStarted]);
+  }, [fetchCount]);
   
   function doFetch() {
-    setHasStarted(true);
+    setFetchCount(fetchCount + 1);
   }
 
   return [data, isLoading, error, doFetch];
 }
 
 // Compare the above to the same thing using a higher order component (HOC).
-// To use, you'd need to use props, rather than the simplicity of local variables.
+// To use, you'd need to use this.props.XYZ, rather than the brevity of local variables.
 function dataFetcher(url) {
   return function(WrappedComponent) {
     return class extends Component {
