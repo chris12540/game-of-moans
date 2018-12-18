@@ -16,11 +16,12 @@ export default class GameOfMoansDemo extends Component {
     return (
       <div className="game-of-moans-demo">
         <header>
-          <img src="/images/game_of_moans.png" alt="Game of Moans" />
+          <div><img src="/images/game_of_moans.png" alt="Game of Moans" /></div>
+          <div>Oh JavaScript... ¯\_(ツ)_/¯</div>
         </header>
         <main>
           <div className="controller">
-            <div>Current ID: {currentId}</div>
+            <h2>Current ID: {currentId}</h2>
             <div className="actions">
               <button onClick={() => this.setState({ currentId: currentId - 1 })}>-</button>
               <button onClick={() => this.setState({ currentId: currentId + 1 })}>+</button>

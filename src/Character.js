@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from './axios'
+import './Character.scss'
 
 export default class Character extends Component {
   constructor() {
@@ -33,7 +34,7 @@ export default class Character extends Component {
     const { loading, data } = this.state
 
     return (
-      <div>
+      <div className="character">
         {data && <div>
           <h1>{data.name}</h1>
           <div><img src={data.imageUrl} alt={data.name} /></div>

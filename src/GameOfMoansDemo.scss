@@ -3,18 +3,23 @@
 
   header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   main {
     display: flex;
   
     .controller {
       width: 250px;
     }
-  
+
     .actions {
       display: flex;
+      button {
+        font-size: xx-large;
+      }
     }
   }
 }
