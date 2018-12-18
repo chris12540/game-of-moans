@@ -13,6 +13,16 @@ export default class Character extends Component {
   componentDidMount() {
     const { id } = this.props
     
+    this.fetchCharacter(id)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.id !== this.props.id) {
+      this.fetchCharacter(this.props.id)
+    }
+  }
+
+  fetchCharacter(id) {
     this.setState({ loading: true })
     axios.get('https://gameofmoans.com/api/character/' + id).then(response => {
       this.setState({ data: response.data })
@@ -24,14 +34,11 @@ export default class Character extends Component {
 
     return (
       <div>
-        {loading && <div>
-          <h1>Character</h1>
-          <div>Loading...</div>
-        </div>}
         {data && <div>
           <h1>{data.name}</h1>
           <div><img src={data.imageUrl} alt={data.name} /></div>
         </div>}
+        {loading && <div><em>Loading...</em></div>}
       </div>
     )
   }

@@ -1,28 +1,28 @@
 const characters = {
   1: {
     id: 1,
-    name: 'context (this.this?)',
-    imageUrl: '/images/cersei.jpg'
+    name: 'semicolon insertion',
+    imageUrl: '/images/night_king.jpg'
   },
   2: {
     id: 2,
-    name: 'hoisting',
-    imageUrl: '/images/gregor_clegane.png'
+    name: 'Java?',
+    imageUrl: '/images/ramsay_bolton.jpg'
   },
   3: {
     id: 3,
-    name: 'type coercion (==)',
-    imageUrl: '/images/karl_tanner.jpg'
+    name: 'NaN',
+    imageUrl: '/images/roose_bolton.jpg'
   },
   4: {
     id: 4,
-    name: 'global variables',
-    imageUrl: '/images/littlefinger.jpg'
+    name: 'hoisting',
+    imageUrl: '/images/gregor_clegane.png'
   },
   5: {
     id: 5,
-    name: 'NaN',
-    imageUrl: '/images/night_kind.jpg'
+    name: 'global variables',
+    imageUrl: '/images/littlefinger.jpg'
   },
   6: {
     id: 6,
@@ -31,18 +31,18 @@ const characters = {
   },
   7: {
     id: 7,
-    name: 'Java?',
-    imageUrl: '/images/ramsay_bolton.jpg'
+    name: 'type coercion (==)',
+    imageUrl: '/images/karl_tanner.jpg'
   },
   8: {
     id: 8,
-    name: 'jQuery',
-    imageUrl: '/images/joffrey.jpg'
+    name: 'context (this.this?)',
+    imageUrl: '/images/cersei.jpg'
   },
   9: {
     id: 9,
-    name: 'semicolon insertion',
-    imageUrl: '/images/roose_bolton.jpg'
+    name: 'jQuery',
+    imageUrl: '/images/joffrey.jpg'
   }
 }
 
