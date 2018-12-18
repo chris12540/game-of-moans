@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import React, { Component } from 'react';
 import axios from 'axios';
+import lodash from 'lodash';
+
+const axiosFetcher = lodash.memoize(url => axios.get(url))
 
 export function useDataFetcher(url) {
   const [data, setData] = useState(null);
@@ -11,7 +14,7 @@ export function useDataFetcher(url) {
   useEffect(() => {
     if (fetchCount) {
       setIsLoading(true);
-      axios.get(url).then(response => {
+      axiosFetcher(url).then(response => {
         setData(response.data);
       })
         .catch(setError)
