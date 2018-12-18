@@ -16,7 +16,7 @@ export default class Character extends Component {
     this.fetchCharacter(id)
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
       this.fetchCharacter(this.props.id)
     }

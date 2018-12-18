@@ -15,14 +15,19 @@ export default class GameOfMoansDemo extends Component {
     
     return (
       <div className="game-of-moans-demo">
-        <div className="controller">
-          <div>Current ID: {currentId}</div>
-          <div className="actions">
-            <button onClick={() => this.setState({ currentId: currentId - 1 })}>-</button>
-            <button onClick={() => this.setState({ currentId: currentId + 1 })}>+</button>
+        <header>
+          <img src="/images/game_of_moans.png" alt="Game of Moans" />
+        </header>
+        <main>
+          <div className="controller">
+            <div>Current ID: {currentId}</div>
+            <div className="actions">
+              <button onClick={() => this.setState({ currentId: currentId - 1 })}>-</button>
+              <button onClick={() => this.setState({ currentId: currentId + 1 })}>+</button>
+            </div>
           </div>
-        </div>
-        {!!currentId && <Character id={currentId} />}
+          {!!currentId && <Character id={currentId} />}
+        </main>
       </div>
     )
   }
