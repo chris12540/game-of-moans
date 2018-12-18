@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import DataFetchDemo from './DataFetchDemo';
+import React, { Component } from 'react'
+import './App.css'
+import GameOfMoansDemo from './GameOfMoansDemo'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <DataFetchDemo />
+        <GameOfMoansDemo />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
