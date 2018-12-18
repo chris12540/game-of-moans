@@ -8,18 +8,23 @@
     align-items: center;
   }
 
+  .divider {
+    border-left: 2px white solid;
+    cursor: col-resize;
+  }
+
   main {
     display: flex;
   
-    .controller {
-      width: 250px;
-    }
-
     .actions {
       display: flex;
       button {
         font-size: xx-large;
       }
+    }
+
+    .character-container {
+      margin-left: 20px;
     }
   }
 }
